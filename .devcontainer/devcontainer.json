@@ -1,0 +1,38 @@
+{
+    "name": "dev",
+    "service": "dev",
+    "dockerComposeFile": "docker-compose.yml",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.formatOnPaste": false,
+                "editor.formatOnType": false,
+                "editor.formatOnSave": true,
+                "editor.formatOnSaveMode": "file",
+                "files.autoSave": "onFocusChange",
+                "deno.enablePaths": [
+                    "./deno"
+                ],
+                "deno.cacheOnSave": true
+            },
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "denoland.vscode-deno",
+                "prisma.prisma"
+            ]
+        }
+    },
+    "remoteUser": "root",
+    "workspaceFolder": "/workspace",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+    },
+    "forwardPorts": [
+        8080
+    ],
+    "portsAttributes": {
+        "8080": {
+            "label": "adminer"
+        }
+    }
+}

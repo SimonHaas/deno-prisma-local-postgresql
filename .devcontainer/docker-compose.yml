@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  dev:
+    build: .
+    restart: always
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+
+  postgres:
+    network_mode: service:dev
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+
+  adminer:
+    network_mode: service:dev
+    image: adminer
+    restart: always
+    environment:
+      ADMINER_DEFAULT_SERVER: 127.0.0.1:5432
