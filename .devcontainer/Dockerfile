@@ -9,4 +9,4 @@ RUN apt-get update && \
     export DENO_INSTALL=/root/.deno && \
     export PATH=$DENO_INSTALL/bin:$PATH && \
     echo "export DENO_INSTALL=/root/.deno" >> ~/.bashrc && \
-    echo "export PATH=$DENO_INSTALL/bin:$PATH" >> ~/.bashrc && \
+    echo "export PATH=$DENO_INSTALL/bin:$PATH" >> ~/.bashrc
